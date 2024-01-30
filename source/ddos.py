@@ -1,10 +1,9 @@
-import random
 import requests
 import concurrent.futures
 
 
 def get_random_url():
-    return "http://10.126.3.172:8000/convert/" + str(random.randint(0, 999999999999))
+    return "http://tonSiteConnard"
 
 
 def spam():
@@ -15,8 +14,9 @@ def spam():
             break
 
 
-nb_thread = 8
-pool = concurrent.futures.ThreadPoolExecutor(max_workers=nb_thread)
+if __name__ == '__main__':
+    nb_thread = 8
+    pool = concurrent.futures.ThreadPoolExecutor(max_workers=nb_thread)
 
-for i in range(0, nb_thread):
-    pool.submit(spam)
+    for i in range(0, nb_thread):
+        pool.submit(spam)
